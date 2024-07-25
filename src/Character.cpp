@@ -9,7 +9,7 @@ Character::Character(char start, int offset){
     else
         throw invalidCharacterException();
         //if offset position is valid, assigne else throw exception
-    if (isalpha(start + offset))
+    if ((isupper(start) && isupper(start + offset)) || (islower(start) && islower(start+offset)))
         this->offset = offset;
     else
         throw invalidRangeException();
